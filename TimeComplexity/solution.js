@@ -47,39 +47,49 @@ function solution(A) {
 
 //validate empty array
 console.log("expect 1. got: " + solution([]));
+console.log(solution([]) == 1);
 console.log("");
 
 //validate single length array
 console.log("expect 2. got: " + solution([1]));
+console.log(solution([1]) == 2);
 console.log("");
 
 //validate single length non 1
 console.log("expect 3. got: " + solution([4]));
+console.log(solution([4]) == 3);
 console.log("");
 
 //validate 2 length array with missing middle
 console.log("expect 7. got: " + solution([6, 8]));
+console.log(solution([6, 8]) == 7);
 console.log("");
 
 //validate 2 length array with missing end
 console.log("expect 6. got: " + solution([7, 8]));
+console.log(solution([7, 8]) == 6);
 console.log("");
 
 //validate 5 length array with missing end
 console.log("expect 6. got: " + solution([1, 2, 3, 4, 5]));
+console.log(solution([1, 2, 3, 4, 5]) == 6);
 console.log("");
 
 //validate 8 length array with missing high
 console.log("expect 11. got: " + solution([4, 10, 12, 5, 6, 7, 9, 8]));
+console.log(solution([4, 10, 12, 5, 6, 7, 9, 8]) == 11);
 console.log("");
 
 //validate 8 length array with missing first
 console.log("expect 3. got: " + solution([11, 10, 4, 5, 6, 7, 9, 8]));
+console.log(solution([11, 10, 4, 5, 6, 7, 9, 8]) == 3);
 console.log("");
 
 //validate 8 length array with missing mid
 console.log("expect 5. got: " + solution([1, 2, 4, 3, 6, 7, 9, 8]));
+console.log(solution([1, 2, 4, 3, 6, 7, 9, 8]) == 5);
 console.log("");
 
 //validate higher numbers
 console.log("expect 96. got: " + solution([99, 98, 97, 95, 94, 93, 92, 91]));
+console.log(solution([99, 98, 97, 95, 94, 93, 92, 91]) == 96);
