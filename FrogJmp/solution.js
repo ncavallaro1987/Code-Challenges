@@ -8,21 +8,30 @@ function solution(X, Y, D) {
     return jumpsNeeded;
 }
 
+function validate(A, B, C, D, E) {
+    let startTime
+    let result
+    let msRun
+    console.log("testing " + A)
+    startTime = Date.now()
+    result = solution(C, D, E)
+    msRun = (Date.now() - startTime).toString()
+    console.log("expect " + B.toString() + ". got: " + result)
+    console.log("milliseconds : " + msRun)
+    console.log(B == result)
+    console.log("");
+}
+
 //testing 10,85,30
-console.log("expected 3, got: " + solution(10,85,30));
-console.log(solution(10,85,30) == 3);
+validate("10,85,30", 3, 10,85,30)
+
 
 //testing 1,9000,7
-console.log("")
-console.log("expected 1286, got: " + solution(1,9000,7));
-console.log(solution(1,9000,7) == 1286);
+validate("1,9000,7", 1286, 1,9000,7)
 
 //testing 2,815,27
-console.log("")
-console.log("expected 31, got: " + solution(2,815,27));
-console.log(solution(2,815,27) == 31);
+validate("2,815,27", 31, 2,815,27)
 
 //testing 7000,9567,2
-console.log("")
-console.log("expected 1284, got: " + solution(7000,9567,2));
-console.log(solution(7000,9567,2) == 1284);
+validate("7000,9567,2", 1284, 7000,9567,2)
+

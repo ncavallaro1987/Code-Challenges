@@ -36,13 +36,16 @@ function solution(A) {
 
 function validate(A, B, C){
     let startTime = 0;
-
+    let result
+    let msRun
     
     console.log("Testing " + A);
     startTime = Date.now()
-    console.log("expect " + B.toString() + ". got: " + solution(C))
-    console.log("milliseconds in solution: " + (Date.now() - startTime).toString())
-    console.log(B == solution(C))
+    result = solution(C)
+    msRun = (Date.now() - startTime).toString()
+    console.log("expect " + B.toString() + ". got: " + result)
+    console.log("milliseconds in solution: " + msRun)
+    console.log(B == result)
     console.log("");
 
 }

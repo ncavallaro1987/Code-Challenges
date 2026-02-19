@@ -76,27 +76,34 @@ function superSolution(A) {
 }
 
 function validate(A, B, C){
-    let startTime = 0;
-
+    let startTime
+    let result
+    let msRun
     
     console.log("Testing " + A);
     console.log("testing solution()")
     startTime = Date.now()
-    console.log("expect " + B.toString() + ". got: " + solution(C))
-    console.log("milliseconds in solution: " + (Date.now() - startTime).toString())
-    console.log(B == solution(C))
+    result = solution(C)
+    msRun = (Date.now() - startTime).toString()
+    console.log("expect " + B.toString() + ". got: " + result)
+    console.log("milliseconds in solution: " + msRun)
+    console.log(B == result)
     console.log("");
     console.log("testing NotSolution()")
     startTime = Date.now()
-    console.log("expect " + B.toString() + ". got: " + NotSolution(C))
-    console.log("milliseconds in NotSolution: " + (Date.now() - startTime).toString())
-    console.log(B == NotSolution(C))
+    result = NotSolution(C)
+    msRun = (Date.now() - startTime).toString()
+    console.log("expect " + B.toString() + ". got: " + result)
+    console.log("milliseconds in solution: " + msRun)
+    console.log(B == result)
     console.log("");
-     console.log("testing superSolution()")
+    console.log("testing superSolution()")
     startTime = Date.now()
-    console.log("expect " + B.toString() + ". got: " + superSolution(C))
-    console.log("milliseconds in superSolution: " + (Date.now() - startTime).toString())
-    console.log(B == NotSolution(C))
+    result = superSolution(C)
+    msRun = (Date.now() - startTime).toString()
+    console.log("expect " + B.toString() + ". got: " + result)
+    console.log("milliseconds in solution: " + msRun)
+    console.log(B == result)
     console.log("");
     console.log("");
     console.log("");
