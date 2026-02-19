@@ -1,7 +1,7 @@
 function badSolution(A, K) {
   //Copilot typeahead wrote this code. It is not a good solution to the problem, but it does work.  
   //rotate the array K times. Each time, remove the last element and add it to the front of the array.
-  let rotatedArray = A
+  let rotatedArray = A.slice()
   for (let i = 0; i < K; i++) {
     let lastElement = rotatedArray.pop();
     rotatedArray.unshift(lastElement);
@@ -16,7 +16,7 @@ function slightlyBetterSolution(A, K) {
     // Similarly, if all elements in the array are the same, then the array will be the same after any number of rotations as it is before.
     // It does have the problem though that it will still run K cycles if the array has 4 elements and K is 8, even though the array will be 
     // the same after 8 rotations as it is before, and that it will take an unnecessarily long time if K is greater than the length of the array.
-  let rotatedArray = A
+  let rotatedArray = A.slice()
 
   if (rotatedArray.length == K || rotatedArray.every((val) => val === rotatedArray[0])) {
     //do nothing. The array will be the same after K rotations as it is before.
@@ -60,25 +60,28 @@ function validate(A, B, C, D){
     let msRun
     
     console.log("Testing " + A);
+
     console.log("testing badSolution()")
     startTime = Date.now()
-    result = badSolution(C.slice(), D).slice(0, 8).join(', ') + "..."
+    result = badSolution(C, D).splice(0, 8).join(', ') + "..."
     msRun = (Date.now() - startTime).toString()
     console.log("expect " + B.toString() + ". got: " + result)
     console.log("milliseconds in badSolution: " + msRun)
     console.log(B == result)
     console.log("");
+
     console.log("testing slightlyBetterSolution()")
     startTime = Date.now()
-    result = slightlyBetterSolution(C.slice(), D).slice(0, 8).join(', ') + "..."
+    result = slightlyBetterSolution(C, D).splice(0, 8).join(', ') + "..."
     msRun = (Date.now() - startTime).toString()
     console.log("expect " + B.toString() + ". got: " + result)
     console.log("milliseconds in slightlyBetterSolution: " + msRun)
     console.log(B == result)
     console.log("");
+    
     console.log("testing solution()")
     startTime = Date.now()
-    result = solution(C.slice(), D).slice(0, 8).join(', ') + "..."
+    result = solution(C, D).splice(0, 8).join(', ') + "..."
     msRun = (Date.now() - startTime).toString()
     console.log("expect " + B.toString() + ". got: " + result)
     console.log("milliseconds in solution: " + msRun)
